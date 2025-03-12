@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>الميدالية الذكية NFC - الحل الذكي للتعريف الرقمي</title>
-  <!-- خط تاجوال + أيقونات فونت أويسم -->
+  <title>الميدالية الذكية NFC</title>
+  <!-- خط تاجوال + أيقونات -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet" />
   <link
     rel="stylesheet"
@@ -12,70 +12,75 @@
   />
   <style>
     :root {
-      --primary-color: #2563eb;      /* أزرق أساسي */
-      --secondary-color: #1e40af;    /* أزرق داكن */
-      --accent-color: #60a5fa;       /* أزرق فاتح */
-      --text-color: #1f2937;         /* رمادي غامق */
-      --light-bg: #f3f4f6;           /* خلفية فاتحة */
+      --primary-color: #2563eb;   /* أزرق أساسي */
+      --secondary-color: #1e40af; /* أزرق داكن */
+      --accent-color: #60a5fa;    /* أزرق فاتح */
+      --text-color: #1f2937;      /* رمادي غامق */
+      --light-bg: #f3f4f6;        /* خلفية فاتحة */
       --transition: all 0.3s ease;
       --base-font: 16px;
     }
 
-    /* إعدادات الخط الأساسي */
+    /* الأساسيات */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Tajawal', sans-serif;
     }
-
     html {
       font-size: var(--base-font);
     }
-
     body {
       background: var(--light-bg);
       color: var(--text-color);
       line-height: 1.7;
     }
 
-    /* الرأس (الهيدر) */
+    /* شريط علوي للرقم */
+    .top-bar {
+      background-color: var(--secondary-color);
+      padding: 0.4rem 1rem;
+    }
+    .top-bar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #fff;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.95rem;
+    }
+    .top-bar a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* الهيدر */
     .header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
-      z-index: 1000;
-      padding: 0.5rem 0;
+      z-index: 999;
     }
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0.5rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-size: 1.25rem;
       font-weight: 700;
     }
-    .logo-img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-      transition: var(--transition);
-    }
     .nav-links {
+      list-style: none;
       display: flex;
       gap: 1.5rem;
-      list-style: none;
     }
     .nav-link {
       color: rgba(255,255,255,0.9);
@@ -102,7 +107,7 @@
       width: 100%;
     }
 
-    /* الأقسام الرئيسية */
+    /* الأقسام */
     .section {
       padding: 3rem 1rem;
       max-width: 1200px;
@@ -110,7 +115,7 @@
     }
     .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--secondary-color);
       margin-bottom: 1.5rem;
       position: relative;
@@ -129,12 +134,11 @@
     /* المميزات */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 1.5rem;
-      margin-top: 1rem;
     }
     .feature-card {
-      background: white;
+      background: #fff;
       border-radius: 0.75rem;
       padding: 1.5rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -152,12 +156,12 @@
       color: var(--primary-color);
     }
     .feature-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
       color: var(--secondary-color);
     }
 
-    /* قسم الفوائد */
+    /* الفوائد */
     .benefits-section {
       background: #f8fafc;
       padding: 2.5rem 1rem;
@@ -165,19 +169,19 @@
     .benefits-grid {
       display: grid;
       gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     }
     .benefit-card {
-      background: white;
+      background: #fff;
       padding: 1.5rem;
       border-radius: 0.75rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       border: 1px solid rgba(0,0,0,0.1);
     }
     .benefit-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--secondary-color);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -186,35 +190,26 @@
       font-size: 1.5rem;
       color: var(--primary-color);
     }
-    /* خطوات الاستخدام */
+
+    /* خطوات الاستخدام (بسيطة) */
     .step-list {
       counter-reset: step-counter;
       padding: 0;
-      margin-top: 0.5rem;
+      margin: 0.5rem 0;
+      list-style: none;
     }
     .step-item {
+      counter-increment: step-counter;
+      margin-bottom: 1rem;
       position: relative;
-      padding: 1rem 0 1rem 2.5rem;
-      border-right: 2px solid var(--primary-color);
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
+      padding-left: 1.8rem;
     }
     .step-item::before {
-      counter-increment: step-counter;
-      content: counter(step-counter);
+      content: counter(step-counter) ". ";
       position: absolute;
-      right: -1rem;
-      top: 1rem;
-      background: var(--primary-color);
-      color: white;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      left: 0;
       font-weight: bold;
-      font-size: 0.9rem;
+      color: var(--primary-color);
     }
 
     .tips-box {
@@ -233,15 +228,15 @@
       text-align: center;
     }
     .contact-section h2 {
-      color: white;
-      font-size: 2rem;
+      color: #fff;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
       position: relative;
     }
     .contact-section p {
       color: rgba(255,255,255,0.9);
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
     .social-links {
       display: flex;
@@ -250,14 +245,14 @@
     }
     .social-link {
       color: white;
-      font-size: 2rem;
+      font-size: 1.8rem;
       transition: var(--transition);
     }
     .social-link:hover {
       transform: scale(1.1);
     }
 
-    /* الحقوق في الأسفل */
+    /* الحقوق */
     .footer {
       background: #e5e7eb;
       text-align: center;
@@ -266,72 +261,45 @@
       color: #374151;
     }
 
-    /* الحركات (Animations) */
+    /* حركات بسيطة */
     .fade-up, .fade-left, .fade-right {
       opacity: 0;
       transition: var(--transition);
     }
-    .fade-up {
-      transform: translateY(30px);
-    }
-    .fade-left {
-      transform: translateX(-30px);
-    }
-    .fade-right {
-      transform: translateX(30px);
-    }
-    .show {
-      opacity: 1;
-      transform: translateX(0) translateY(0);
-    }
+    .fade-up { transform: translateY(30px); }
+    .fade-left { transform: translateX(-30px); }
+    .fade-right { transform: translateX(30px); }
+    .show { opacity: 1; transform: none; }
 
     /* استجابة للجوال */
     @media (max-width: 768px) {
-      .nav-container {
-        padding: 0 1rem;
-      }
       .section-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
       }
-      .logo {
+      .feature-card i {
+        font-size: 1.6rem;
+      }
+      .feature-title {
         font-size: 1.1rem;
       }
-      .logo-img {
-        width: 35px;
-        height: 35px;
-      }
-      .social-link {
-        font-size: 1.75rem;
-      }
-      .step-item {
-        padding-left: 2rem;
-      }
-      .step-item::before {
-        right: -0.75rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-title {
-        font-size: 1.5rem;
-      }
-      .nav-links {
-        gap: 1rem;
-      }
-      .social-link {
-        font-size: 1.5rem;
+      .contact-section h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- الشريط العلوي للرقم -->
+  <div class="top-bar">
+    <div class="container">
+      <p>واتساب: <a href="https://wa.me/966535964292" target="_blank">+966535964292</a></p>
+    </div>
+  </div>
+
   <!-- الهيدر -->
   <header class="header">
     <nav class="nav-container">
-      <a href="#" class="logo fade-left">
-        <img src="nfc-logo.png" alt="شعار NFC" class="logo-img" />
-        <span>الميدالية الذكية</span>
-      </a>
+      <a href="#" class="logo fade-left">الميدالية الذكية</a>
       <ul class="nav-links fade-right">
         <li><a href="#features" class="nav-link">المميزات</a></li>
         <li><a href="#benefits" class="nav-link">الفوائد</a></li>
@@ -340,6 +308,7 @@
     </nav>
   </header>
 
+  <!-- المحتوى الرئيسي -->
   <main>
     <!-- قسم المميزات -->
     <section class="section" id="features">
@@ -348,17 +317,17 @@
         <div class="feature-card fade-left" style="transition-delay: 0.1s;">
           <i class="fas fa-id-card"></i>
           <h3 class="feature-title">بطاقة تعريف ذكية</h3>
-          <p>شارك معلوماتك بلمسة واحدة باستخدام تقنية NFC المتقدمة</p>
+          <p>شارك معلوماتك بلمسة واحدة باستخدام تقنية NFC</p>
         </div>
         <div class="feature-card fade-up" style="transition-delay: 0.2s;">
           <i class="fas fa-shield-alt"></i>
           <h3 class="feature-title">أمان متطور</h3>
-          <p>تشفير عالي يحمي بياناتك الشخصية من الوصول غير المصرح به</p>
+          <p>تشفير عالي يحمي بياناتك الشخصية من أي وصول غير مصرح</p>
         </div>
         <div class="feature-card fade-right" style="transition-delay: 0.3s;">
           <i class="fas fa-cogs"></i>
           <h3 class="feature-title">تخصيص كامل</h3>
-          <p>صمم ميداليتك لتكون كارت تعريف صحي، وظيفي، أو حتى تحكّم بالأجهزة</p>
+          <p>حوّلها لبطاقة تعريف وظيفية أو صحية أو للتحكم بالأجهزة</p>
         </div>
       </div>
     </section>
@@ -367,43 +336,29 @@
     <section class="benefits-section" id="benefits">
       <div class="container">
         <h2 class="section-title fade-up" style="color: #1e3a8a;">لماذا تختار الميدالية الذكية؟</h2>
-
         <div class="benefits-grid">
           <div class="benefit-card fade-left" style="transition-delay: 0.2s;">
             <h3><i class="fas fa-magic icon-highlight"></i> الاستخدامات المبتكرة</h3>
-            <ul style="list-style: none; line-height: 1.4; font-size: 0.95rem; margin-top: 0.5rem;">
+            <ul style="list-style: none; line-height: 1.5; font-size: 0.95rem;">
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> مشاركة فورية لبيانات التواصل</li>
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> تحديث البيانات عن بُعد</li>
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> تخزين المعلومات الطبية الطارئة</li>
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> التحكم في الأجهزة الذكية</li>
             </ul>
           </div>
-
           <div class="benefit-card fade-right" style="transition-delay: 0.3s;">
             <h3><i class="fas fa-mobile-alt icon-highlight"></i> كيفية الاستخدام</h3>
-            <ol class="step-list">
-              <li class="step-item">
-                <p style="font-weight: 500;">تفعيل خاصية NFC في الجوال</p>
-                <small style="color: #6b7280;">(ابحث عن إعداد NFC في الضبط)</small>
-              </li>
-              <li class="step-item">
-                <p style="font-weight: 500;">تقريب الجوال من الميدالية</p>
-                <small style="color: #6b7280;">(مسافة 1-5 سم تكفي)</small>
-              </li>
-              <li class="step-item">
-                <p style="font-weight: 500;">اختيار الإجراء المطلوب</p>
-                <small style="color: #6b7280;">(مشاركة معلوماتك، حفظ بيانات، تشغيل وظيفة)</small>
-              </li>
-              <li class="step-item">
-                <p style="font-weight: 500;">استمتع بالمميزات</p>
-                <small style="color: #6b7280;">(تحكّم عن بعد، تحديث فوري، أمان متكامل)</small>
-              </li>
-            </ol>
+            <ul class="step-list">
+              <li class="step-item">تفعيل خاصية NFC في الجوال</li>
+              <li class="step-item">تقريب الجوال من الميدالية (1-5 سم)</li>
+              <li class="step-item">اختيار الإجراء المطلوب (مشاركة - حفظ - تشغيل)</li>
+              <li class="step-item">استمتع بالمميزات (تحديث فوري - أمان - تحكم عن بعد)</li>
+            </ul>
           </div>
         </div>
 
         <div class="tips-box fade-up" style="transition-delay: 0.4s;">
-          <h4 style="display: flex; align-items: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem;">
+          <h4 style="display: flex; align-items: center; font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem;">
             <i class="fas fa-lightbulb icon-highlight"></i>
             نصائح استثنائية
           </h4>
@@ -428,14 +383,9 @@
     <!-- قسم التواصل -->
     <section class="section contact-section" id="contact">
       <div class="fade-up">
-        <h2 class="section-title" style="color: white;">تواصل معنا</h2>
-        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
-          نحن جاهزون للإجابة على جميع استفساراتك
-        </p>
-        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
-          <strong>واتساب:</strong> <a href="https://wa.me/966535964292" target="_blank" style="color: #fff; text-decoration: underline;">+966535964292</a>
-        </p>
-        <div class="social-links">
+        <h2 class="section-title" style="color: #fff;">تواصل معنا</h2>
+        <p>نحن جاهزون للإجابة على جميع استفساراتك</p>
+        <div class="social-links" style="margin-top: 1rem;">
           <a href="https://wa.me/966535964292" class="social-link" target="_blank">
             <i class="fab fa-whatsapp"></i>
           </a>
@@ -447,13 +397,13 @@
     </section>
   </main>
 
-  <!-- الحقوق في الأسفل -->
-  <footer class="footer fade-up" style="transition-delay: 0.2s;">
-    <p>جميع الحقوق محفوظة للطالب فهد عبد الله القحطاني</p>
+  <!-- الحقوق -->
+  <footer class="footer fade-up" style="transition-delay: 0.5s;">
+    <p>&copy; جميع الحقوق محفوظة للطالب فهد عبد الله القحطاني</p>
   </footer>
 
   <script>
-    // كود المراقبة لعناصر الظهور التدريجي
+    // مراقبة الظهور التدريجي
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -462,7 +412,7 @@
       });
     }, { threshold: 0.1 });
 
-    // تطبيق المراقبة على العناصر ذات الحركات
+    // تطبيق المراقبة على عناصر الحركات
     document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach((el) => {
       observer.observe(el);
     });
