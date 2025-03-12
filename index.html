@@ -4,19 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>الميدالية الذكية NFC - الحل الذكي للتعريف الرقمي</title>
+  <!-- خط تاجوال + أيقونات فونت أويسم -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <style>
     :root {
-      --primary-color: #2563eb;
-      --secondary-color: #1e40af;
-      --accent-color: #60a5fa;
-      --text-color: #1f2937;
-      --light-bg: #f3f4f6;
+      --primary-color: #2563eb;      /* أزرق أساسي */
+      --secondary-color: #1e40af;    /* أزرق داكن */
+      --accent-color: #60a5fa;       /* أزرق فاتح */
+      --text-color: #1f2937;         /* رمادي غامق */
+      --light-bg: #f3f4f6;           /* خلفية فاتحة */
       --transition: all 0.3s ease;
       --base-font: 16px;
     }
 
+    /* إعدادات الخط الأساسي */
     * {
       margin: 0;
       padding: 0;
@@ -34,7 +39,7 @@
       line-height: 1.7;
     }
 
-    /* الهيدر والشعار */
+    /* الرأس (الهيدر) */
     .header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -76,9 +81,9 @@
       color: rgba(255,255,255,0.9);
       text-decoration: none;
       font-weight: 500;
-      transition: var(--transition);
       position: relative;
       font-size: 1rem;
+      transition: var(--transition);
     }
     .nav-link::after {
       content: '';
@@ -97,7 +102,7 @@
       width: 100%;
     }
 
-    /* الأقسام العامة */
+    /* الأقسام الرئيسية */
     .section {
       padding: 3rem 1rem;
       max-width: 1200px;
@@ -121,7 +126,7 @@
       background: var(--accent-color);
     }
 
-    /* قسم المميزات */
+    /* المميزات */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -141,6 +146,16 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 12px rgba(0,0,0,0.1);
     }
+    .feature-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    .feature-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+    }
 
     /* قسم الفوائد */
     .benefits-section {
@@ -159,15 +174,29 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       border: 1px solid rgba(0,0,0,0.1);
     }
+    .benefit-card h3 {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .icon-highlight {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+    /* خطوات الاستخدام */
     .step-list {
       counter-reset: step-counter;
       padding: 0;
+      margin-top: 0.5rem;
     }
     .step-item {
       position: relative;
       padding: 1rem 0 1rem 2.5rem;
       border-right: 2px solid var(--primary-color);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       font-size: 0.95rem;
     }
     .step-item::before {
@@ -187,6 +216,7 @@
       font-weight: bold;
       font-size: 0.9rem;
     }
+
     .tips-box {
       background: #dbeafe;
       padding: 1rem;
@@ -194,11 +224,6 @@
       border-right: 4px solid var(--primary-color);
       margin-top: 1.5rem;
       font-size: 0.9rem;
-    }
-    .icon-highlight {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin-left: 0.5rem;
     }
 
     /* قسم التواصل */
@@ -211,6 +236,7 @@
       color: white;
       font-size: 2rem;
       margin-bottom: 1rem;
+      position: relative;
     }
     .contact-section p {
       color: rgba(255,255,255,0.9);
@@ -231,6 +257,34 @@
       transform: scale(1.1);
     }
 
+    /* الحقوق في الأسفل */
+    .footer {
+      background: #e5e7eb;
+      text-align: center;
+      padding: 0.75rem;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    /* الحركات (Animations) */
+    .fade-up, .fade-left, .fade-right {
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .fade-up {
+      transform: translateY(30px);
+    }
+    .fade-left {
+      transform: translateX(-30px);
+    }
+    .fade-right {
+      transform: translateX(30px);
+    }
+    .show {
+      opacity: 1;
+      transform: translateX(0) translateY(0);
+    }
+
     /* استجابة للجوال */
     @media (max-width: 768px) {
       .nav-container {
@@ -249,7 +303,14 @@
       .social-link {
         font-size: 1.75rem;
       }
+      .step-item {
+        padding-left: 2rem;
+      }
+      .step-item::before {
+        right: -0.75rem;
+      }
     }
+
     @media (max-width: 480px) {
       .section-title {
         font-size: 1.5rem;
@@ -261,30 +322,17 @@
         font-size: 1.5rem;
       }
     }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .animate {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
   </style>
 </head>
 <body>
+  <!-- الهيدر -->
   <header class="header">
     <nav class="nav-container">
-      <a href="#" class="logo">
+      <a href="#" class="logo fade-left">
         <img src="nfc-logo.png" alt="شعار NFC" class="logo-img" />
         <span>الميدالية الذكية</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links fade-right">
         <li><a href="#features" class="nav-link">المميزات</a></li>
         <li><a href="#benefits" class="nav-link">الفوائد</a></li>
         <li><a href="#contact" class="nav-link">التواصل</a></li>
@@ -295,22 +343,22 @@
   <main>
     <!-- قسم المميزات -->
     <section class="section" id="features">
-      <h2 class="section-title animate">الحل الذكي للتعريف الرقمي</h2>
+      <h2 class="section-title fade-up">الحل الذكي للتعريف الرقمي</h2>
       <div class="features-grid">
-        <div class="feature-card animate" style="animation-delay: 0.2s">
+        <div class="feature-card fade-left" style="transition-delay: 0.1s;">
           <i class="fas fa-id-card"></i>
           <h3 class="feature-title">بطاقة تعريف ذكية</h3>
-          <p>شارك معلوماتك بلمسة واحدة مع تقنية NFC المتقدمة</p>
+          <p>شارك معلوماتك بلمسة واحدة باستخدام تقنية NFC المتقدمة</p>
         </div>
-        <div class="feature-card animate" style="animation-delay: 0.4s">
+        <div class="feature-card fade-up" style="transition-delay: 0.2s;">
           <i class="fas fa-shield-alt"></i>
           <h3 class="feature-title">أمان متطور</h3>
-          <p>تشفير متقدم لحماية بياناتك الشخصية</p>
+          <p>تشفير عالي يحمي بياناتك الشخصية من الوصول غير المصرح به</p>
         </div>
-        <div class="feature-card animate" style="animation-delay: 0.6s">
+        <div class="feature-card fade-right" style="transition-delay: 0.3s;">
           <i class="fas fa-cogs"></i>
           <h3 class="feature-title">تخصيص كامل</h3>
-          <p>صمم ميداليتك حسب احتياجاتك الخاصة</p>
+          <p>صمم ميداليتك لتكون كارت تعريف صحي، وظيفي، أو حتى تحكّم بالأجهزة</p>
         </div>
       </div>
     </section>
@@ -318,44 +366,43 @@
     <!-- قسم الفوائد -->
     <section class="benefits-section" id="benefits">
       <div class="container">
-        <h2 class="section-title animate" style="color: #1e3a8a;">لماذا تختار الميدالية الذكية؟</h2>
+        <h2 class="section-title fade-up" style="color: #1e3a8a;">لماذا تختار الميدالية الذكية؟</h2>
+
         <div class="benefits-grid">
-          <div class="benefit-card animate" style="animation-delay: 0.2s">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-              <i class="fas fa-magic icon-highlight"></i>
-              <h3 style="font-size: 1.25rem; font-weight: bold;">الاستخدامات المبتكرة</h3>
-            </div>
-            <ul style="list-style: none; line-height: 1.4; font-size: 0.95rem;">
+          <div class="benefit-card fade-left" style="transition-delay: 0.2s;">
+            <h3><i class="fas fa-magic icon-highlight"></i> الاستخدامات المبتكرة</h3>
+            <ul style="list-style: none; line-height: 1.4; font-size: 0.95rem; margin-top: 0.5rem;">
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> مشاركة فورية لبيانات التواصل</li>
-              <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> تحديث البيانات عن بعد</li>
+              <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> تحديث البيانات عن بُعد</li>
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> تخزين المعلومات الطبية الطارئة</li>
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> التحكم في الأجهزة الذكية</li>
             </ul>
           </div>
 
-          <div class="benefit-card animate" style="animation-delay: 0.4s">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-              <i class="fas fa-mobile-alt icon-highlight"></i>
-              <h3 style="font-size: 1.25rem; font-weight: bold;">كيفية الاستخدام</h3>
-            </div>
-            <ol class="step-list" style="font-size: 0.95rem;">
+          <div class="benefit-card fade-right" style="transition-delay: 0.3s;">
+            <h3><i class="fas fa-mobile-alt icon-highlight"></i> كيفية الاستخدام</h3>
+            <ol class="step-list">
               <li class="step-item">
                 <p style="font-weight: 500;">تفعيل خاصية NFC في الجوال</p>
-                <small style="color: #6b7280;">(متوفر في الأجهزة الحديثة)</small>
+                <small style="color: #6b7280;">(ابحث عن إعداد NFC في الضبط)</small>
               </li>
               <li class="step-item">
                 <p style="font-weight: 500;">تقريب الجوال من الميدالية</p>
-                <small style="color: #6b7280;">(مسافة 1-5 سم)</small>
+                <small style="color: #6b7280;">(مسافة 1-5 سم تكفي)</small>
               </li>
               <li class="step-item">
                 <p style="font-weight: 500;">اختيار الإجراء المطلوب</p>
-                <small style="color: #6b7280;">(مشاركة - حفظ - تشغيل)</small>
+                <small style="color: #6b7280;">(مشاركة معلوماتك، حفظ بيانات، تشغيل وظيفة)</small>
+              </li>
+              <li class="step-item">
+                <p style="font-weight: 500;">استمتع بالمميزات</p>
+                <small style="color: #6b7280;">(تحكّم عن بعد، تحديث فوري، أمان متكامل)</small>
               </li>
             </ol>
           </div>
         </div>
 
-        <div class="tips-box animate" style="animation-delay: 0.6s;">
+        <div class="tips-box fade-up" style="transition-delay: 0.4s;">
           <h4 style="display: flex; align-items: center; font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem;">
             <i class="fas fa-lightbulb icon-highlight"></i>
             نصائح استثنائية
@@ -363,11 +410,11 @@
           <ul style="list-style: none; line-height: 1.4; font-size: 0.9rem;">
             <li style="display: flex; align-items: center;">
               <i class="fas fa-circle-check" style="color: #3b82f6; margin-left: 0.5rem;"></i>
-              تحديث البيانات عن بعد بدون تكاليف إضافية
+              تحديث بياناتك بدون الحاجة لاستبدال الميدالية
             </li>
             <li style="display: flex; align-items: center;">
               <i class="fas fa-circle-check" style="color: #3b82f6; margin-left: 0.5rem;"></i>
-              طبقة حماية متقدمة بالبصمة أو الرمز السري
+              إمكانية قفل الوصول بالبصمة أو الرمز السري
             </li>
             <li style="display: flex; align-items: center;">
               <i class="fas fa-circle-check" style="color: #3b82f6; margin-left: 0.5rem;"></i>
@@ -380,11 +427,16 @@
 
     <!-- قسم التواصل -->
     <section class="section contact-section" id="contact">
-      <div>
+      <div class="fade-up">
         <h2 class="section-title" style="color: white;">تواصل معنا</h2>
-        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">نحن جاهزون للإجابة على جميع استفساراتك</p>
+        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
+          نحن جاهزون للإجابة على جميع استفساراتك
+        </p>
+        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
+          <strong>واتساب:</strong> <a href="https://wa.me/966535964292" target="_blank" style="color: #fff; text-decoration: underline;">+966535964292</a>
+        </p>
         <div class="social-links">
-          <a href="https://wa.me/90535964292" class="social-link" target="_blank">
+          <a href="https://wa.me/966535964292" class="social-link" target="_blank">
             <i class="fab fa-whatsapp"></i>
           </a>
           <a href="https://t.me/wow1505" class="social-link" target="_blank">
@@ -395,20 +447,28 @@
     </section>
   </main>
 
+  <!-- الحقوق في الأسفل -->
+  <footer class="footer fade-up" style="transition-delay: 0.2s;">
+    <p>جميع الحقوق محفوظة للطالب فهد عبد الله القحطاني</p>
+  </footer>
+
   <script>
+    // كود المراقبة لعناصر الظهور التدريجي
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          entry.target.classList.add('show');
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.animate').forEach((el) => {
+    // تطبيق المراقبة على العناصر ذات الحركات
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach((el) => {
       observer.observe(el);
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // تمرير سلس عند الضغط على الروابط
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
