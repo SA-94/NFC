@@ -171,7 +171,7 @@
       gap: 0.5rem;
     }
     .icon-highlight { font-size: 1.5rem; color: var(--primary-color); }
-    /* خطوات الاستخدام (بسيطة) */
+    /* خطوات الاستخدام */
     .step-list {
       counter-reset: step-counter;
       list-style: none;
@@ -217,38 +217,46 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       border: 1px solid rgba(0,0,0,0.1);
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 1rem;
     }
-    .price-image img {
-      width: 80px;
-      height: 80px;
+    /* عرض عدة صور للميدالية */
+    .price-images {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .price-images img {
+      width: 60px;
+      height: 60px;
       object-fit: cover;
       border-radius: 0.5rem;
+      border: 1px solid #ddd;
     }
     .price-info h3 {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
       color: var(--secondary-color);
+      text-align: center;
     }
     .price-info p {
       font-size: 0.95rem;
       margin: 0;
+      text-align: center;
     }
-    /* قسم الفيديو */
+    /* قسم الشروحات (صورة GIF توضيحية) */
     .video-section {
       background: #fff;
       padding: 2.5rem 1rem;
       text-align: center;
     }
-    .video-section iframe {
+    .video-section img {
       width: 100%;
       max-width: 560px;
-      height: 315px;
       border: none;
       border-radius: 0.5rem;
     }
-    /* قسم التقييمات (الشهادات) */
+    /* قسم التقييمات */
     .testimonials-section {
       background: #f8fafc;
       padding: 2.5rem 1rem;
@@ -268,6 +276,11 @@
       text-align: center;
       font-size: 0.95rem;
     }
+    .testimonial-rating {
+      margin-bottom: 0.5rem;
+      color: #facc15;
+      font-size: 1.2rem;
+    }
     .testimonial-card p {
       margin-bottom: 0.75rem;
     }
@@ -275,7 +288,7 @@
       font-weight: bold;
       color: var(--secondary-color);
     }
-    /* قسم الأسئلة الشائعة (FAQ) */
+    /* قسم الأسئلة الشائعة */
     .faq-section {
       background: #fff;
       padding: 2.5rem 1rem;
@@ -289,7 +302,6 @@
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      list-style: none;
     }
     .faq-item p {
       font-size: 0.95rem;
@@ -338,7 +350,7 @@
       transition: var(--transition);
     }
     .social-link:hover { transform: scale(1.1); }
-    /* الحقوق */
+    /* التذييل */
     .footer {
       background: #e5e7eb;
       text-align: center;
@@ -346,15 +358,6 @@
       font-size: 0.9rem;
       color: #374151;
     }
-    /* الحركات (Animations) */
-    .fade-up, .fade-left, .fade-right {
-      opacity: 0;
-      transition: var(--transition);
-    }
-    .fade-up { transform: translateY(30px); }
-    .fade-left { transform: translateX(-30px); }
-    .fade-right { transform: translateX(30px); }
-    .show { opacity: 1; transform: none; }
     /* استجابة للجوال */
     @media (max-width: 768px) {
       .section-title { font-size: 1.5rem; }
@@ -365,25 +368,13 @@
   </style>
 </head>
 <body>
-  <!-- شريط الواتساب العلوي -->
-  <div class="top-bar">
-    <div class="container">
-      <p>واتساب: <a href="https://wa.me/966535964292" target="_blank">+966535964292</a></p>
-    </div>
-  </div>
-
   <!-- الهيدر -->
   <header class="header">
     <nav class="nav-container">
-      <a href="#" class="logo fade-left">الميدالية الذكية</a>
-      <ul class="nav-links fade-right">
+      <a href="#" class="logo">الميدالية الذكية</a>
+      <ul class="nav-links">
         <li><a href="#features" class="nav-link">المميزات</a></li>
         <li><a href="#benefits" class="nav-link">الفوائد</a></li>
-        <li><a href="#pricing" class="nav-link">الأسعار</a></li>
-        <li><a href="#video" class="nav-link">الفيديو</a></li>
-        <li><a href="#testimonials" class="nav-link">التقييمات</a></li>
-        <li><a href="#faq" class="nav-link">الأسئلة</a></li>
-        <li><a href="#offer" class="nav-link">العرض</a></li>
         <li><a href="#contact" class="nav-link">التواصل</a></li>
       </ul>
     </nav>
@@ -393,19 +384,19 @@
   <main>
     <!-- قسم المميزات -->
     <section class="section" id="features">
-      <h2 class="section-title fade-up">الحل الذكي للتعريف الرقمي</h2>
+      <h2 class="section-title">الحل الذكي للتعريف الرقمي</h2>
       <div class="features-grid">
-        <div class="feature-card fade-left" style="transition-delay: 0.1s;">
+        <div class="feature-card">
           <i class="fas fa-id-card"></i>
           <h3 class="feature-title">بطاقة تعريف ذكية</h3>
           <p>شارك معلوماتك بلمسة واحدة باستخدام تقنية NFC</p>
         </div>
-        <div class="feature-card fade-up" style="transition-delay: 0.2s;">
+        <div class="feature-card">
           <i class="fas fa-shield-alt"></i>
           <h3 class="feature-title">أمان متطور</h3>
           <p>تشفير عالي يحمي بياناتك الشخصية من الوصول غير المصرح</p>
         </div>
-        <div class="feature-card fade-right" style="transition-delay: 0.3s;">
+        <div class="feature-card">
           <i class="fas fa-cogs"></i>
           <h3 class="feature-title">تخصيص كامل</h3>
           <p>حوّل الميدالية إلى بطاقة تعريف وظيفية أو صحية أو للتحكم بالأجهزة</p>
@@ -416,9 +407,9 @@
     <!-- قسم الفوائد -->
     <section class="benefits-section" id="benefits">
       <div class="container">
-        <h2 class="section-title fade-up" style="color: #1e3a8a;">لماذا تختار الميدالية الذكية؟</h2>
+        <h2 class="section-title" style="color: #1e3a8a;">لماذا تختار الميدالية الذكية؟</h2>
         <div class="benefits-grid">
-          <div class="benefit-card fade-left" style="transition-delay: 0.2s;">
+          <div class="benefit-card">
             <h3><i class="fas fa-magic icon-highlight"></i> الاستخدامات المبتكرة</h3>
             <ul style="list-style: none; line-height: 1.5; font-size: 0.95rem;">
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> مشاركة فورية لبيانات التواصل</li>
@@ -427,7 +418,7 @@
               <li><i class="fas fa-check-circle" style="color: #10b981; margin-left: 0.5rem;"></i> التحكم في الأجهزة الذكية</li>
             </ul>
           </div>
-          <div class="benefit-card fade-right" style="transition-delay: 0.3s;">
+          <div class="benefit-card">
             <h3><i class="fas fa-mobile-alt icon-highlight"></i> كيفية الاستخدام</h3>
             <ul class="step-list">
               <li class="step-item">تفعيل خاصية NFC في الجوال</li>
@@ -437,7 +428,7 @@
             </ul>
           </div>
         </div>
-        <div class="tips-box fade-up" style="transition-delay: 0.4s;">
+        <div class="tips-box">
           <h4 style="display: flex; align-items: center; font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem;">
             <i class="fas fa-lightbulb icon-highlight"></i>
             نصائح استثنائية
@@ -460,139 +451,229 @@
       </div>
     </section>
 
-    <!-- قسم الأسعار -->
+    <!-- قسم الأسعار والعروض -->
     <section class="pricing-section" id="pricing">
-      <h2 class="section-title fade-up">الأسعار والعروض</h2>
+      <h2 class="section-title">الأسعار والعروض</h2>
       <div class="pricing-grid">
-        <div class="price-card fade-left" style="transition-delay: 0.2s;">
-          <div class="price-image">
-            <img src="nfc-piece.jpg" alt="الميدالية الذكية" />
+        <!-- بطاقة الميدالية الذكية -->
+        <div class="price-card">
+          <div class="price-images">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/H0068b42ebb7345ccb72b1ed7589fc7bct.jpg_220x220q75.jpg_.avif" alt="صورة أولى" />
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Headebf8df7c7401a98df1a62794a3f55V.jpg_220x220q75.jpg_.avif" alt="صورة ثانية" />
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/H0fb51e69b82144ea910deea2ca54ff11z.jpg_220x220q75.jpg_.avif" alt="صورة ثالثة" />
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/H65dbd8e372694b97b4d9280ed0e8ba6ah.jpg_220x220q75.jpg_.avif" alt="صورة رابعة" />
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/H1acfe8ebc35041dfadc0af5de26d5006t.jpg_220x220q75.jpg_.avif" alt="صورة رابعة" />
+
           </div>
           <div class="price-info">
             <h3>الميدالية الذكية</h3>
-            <p>السعر: <strong>100 ريال</strong></p>
+            <p>
+              السعر قبل العرض: <del>57 ريال</del><br>
+              السعر بعد العرض: <strong>25 ريال</strong>
+            </p>
           </div>
         </div>
-        <div class="price-card fade-right" style="transition-delay: 0.3s;">
+        <!-- بطاقة برمجة الموقع -->
+        <div class="price-card">
           <div class="price-image">
             <img src="custom-website.jpg" alt="برمجة موقع مخصص" />
           </div>
           <div class="price-info">
             <h3>برمجة موقع مخصص</h3>
-            <p>السعر: <strong>500 ريال</strong></p>
+            <p>السعر: <strong>من 50 إلى 250 ريال</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- قسم الفيديو التوضيحي -->
+    <!-- قسم الشروحات (صورة GIF توضيحية) -->
     <section class="video-section" id="video">
-      <h2 class="section-title fade-up">شاهد الفيديو التوضيحي</h2>
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen class="fade-up" style="transition-delay: 0.2s;"></iframe>
+      <h2 class="section-title">شاهد الشرح التوضيحي</h2>
+      <img src="https://assets-v2.lottiefiles.com/a/a68e4064-1166-11ee-a842-97da89eaf7c1/U2j3q65a2b.gif" alt="شرح الميدالية الذكية" />
     </section>
 
     <!-- قسم تقييمات العملاء -->
     <section class="testimonials-section" id="testimonials">
-      <h2 class="section-title fade-up">آراء العملاء</h2>
+      <h2 class="section-title">آراء العملاء</h2>
       <div class="testimonials-grid">
-        <div class="testimonial-card fade-left" style="transition-delay: 0.2s;">
-          <p>"الميدالية غيرت طريقتي في مشاركة معلوماتي. خدمة ممتازة!"</p>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"الميدالية غيرت حياتي، الآن أشارك بياناتي بسهولة وأمان."</p>
           <p class="author">سارة</p>
         </div>
-        <div class="testimonial-card fade-up" style="transition-delay: 0.3s;">
-          <p>"الأمان والتحديث الفوري رائعين. أنصح الجميع باستخدامها."</p>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"خدمة ممتازة وسرعة التحديث جعلتني أشعر بالأمان."</p>
           <p class="author">محمد</p>
         </div>
-        <div class="testimonial-card fade-right" style="transition-delay: 0.4s;">
-          <p>"خدمة برمجة الموقع حسب الطلب كانت احترافية وأسعار معقولة."</p>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"التجربة كانت سلسة وساعدتني على التواصل مع زملائي."</p>
           <p class="author">ليلى</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"أشعر بالثقة كلما استخدمت هذه الخدمة، التحديثات مستمرة وفعالة."</p>
+          <p class="author">خالد</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"خدمة برمجة الموقع حسب الطلب كانت احترافية وأسعار مناسبة."</p>
+          <p class="author">نور</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"سهولة الاستخدام والتصميم الرائع خلاني أوصي بها لكل معارفي."</p>
+          <p class="author">أحمد</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"أفضل استثمار في التقنية، فعلاً غيّرت طريقتي في التواصل."</p>
+          <p class="author">ريم</p>
         </div>
       </div>
     </section>
 
     <!-- قسم الأسئلة الشائعة -->
     <section class="faq-section" id="faq">
-      <h2 class="section-title fade-up">الأسئلة الشائعة</h2>
-      <div class="faq-item fade-up" style="transition-delay: 0.2s;">
+      <h2 class="section-title">الأسئلة الشائعة</h2>
+      <div class="faq-item">
         <details>
           <summary>ما هي تقنية NFC؟</summary>
-          <p>NFC (الاتصال قريب المدى) هي تقنية تتيح تبادل البيانات بين الأجهزة بمجرد تقريبها من بعضها.</p>
+          <p>NFC (الاتصال قريب المدى) هي تقنية تسمح بتبادل البيانات بين الأجهزة بمجرد تقريبها.</p>
         </details>
       </div>
-      <div class="faq-item fade-up" style="transition-delay: 0.3s;">
+      <div class="faq-item">
+        <details>
+          <summary>كيف يمكنني تفعيل NFC في هاتفي؟</summary>
+          <p>يمكنك تفعيل NFC من خلال إعدادات الهاتف، عادةً في قسم الاتصالات أو الإعدادات المتقدمة.</p>
+        </details>
+      </div>
+      <div class="faq-item">
+        <details>
+          <summary>هل الميدالية آمنة للاستخدام؟</summary>
+          <p>نعم، الميدالية تستخدم تشفيراً متقدماً لضمان أمان بياناتك الشخصية.</p>
+        </details>
+      </div>
+      <div class="faq-item">
         <details>
           <summary>كيف يمكنني تحديث بيانات الميدالية؟</summary>
           <p>يمكنك تحديث بيانات الميدالية عن بعد عبر التطبيق أو من خلال الموقع المخصص لذلك.</p>
         </details>
       </div>
-      <div class="faq-item fade-up" style="transition-delay: 0.4s;">
+      <div class="faq-item">
         <details>
-          <summary>هل الميدالية مقاومة للماء؟</summary>
-          <p>نعم، الميدالية بتصميم مقاوم للماء والغبار بمعيار IP68.</p>
+          <summary>ما هي الاستخدامات الإضافية للميدالية؟</summary>
+          <p>يمكن استخدامها كبطاقة تعريف شخصية، بطاقة تعريف صحية، أو للتحكم في الأجهزة الذكية.</p>
+        </details>
+      </div>
+      <div class="faq-item">
+        <details>
+          <summary>هل تدعم الميدالية أنظمة تشغيل متعددة؟</summary>
+          <p>نعم، تدعم معظم أنظمة تشغيل الهواتف الذكية الحديثة التي تحتوي على خاصية NFC.</p>
+        </details>
+      </div>
+      <div class="faq-item">
+        <details>
+          <summary>ما هو نطاق قراءة الميدالية؟</summary>
+          <p>يمكن للهاتف قراءة الميدالية من مسافة تتراوح بين 1 إلى 5 سم.</p>
+        </details>
+      </div>
+      <div class="faq-item">
+        <details>
+          <summary>هل تتطلب الميدالية صيانة دورية؟</summary>
+          <p>لا، الميدالية مصممة للعمل لفترة طويلة دون الحاجة إلى صيانة.</p>
+        </details>
+      </div>
+      <div class="faq-item">
+        <details>
+          <summary>ما هي متطلبات برمجة الموقع حسب الطلب؟</summary>
+          <p>يجب التواصل مع المطور لتحديد احتياجاتك وسنقدم لك حلاً مخصصاً يلبي تلك المتطلبات.</p>
+        </details>
+      </div>
+      <div class="faq-item">
+        <details>
+          <summary>هل يوجد ضمان على المنتج؟</summary>
+          <p>نعم، نقدم ضماناً لمدة محددة على جودة وأداء الميدالية.</p>
         </details>
       </div>
     </section>
 
-    <!-- قسم العرض الخاص مع العد التنازلي -->
+    <!-- قسم العرض الخاص (العد التنازلي) -->
     <section class="offer-section" id="offer">
-      <h2 class="fade-up">عرض خاص لفترة محدودة!</h2>
-      <p class="fade-up" style="transition-delay: 0.2s;">احصل على خصم 20% عند الشراء خلال:</p>
-      <div class="countdown fade-up" style="transition-delay: 0.3s;" id="countdown">00:00:00:00</div>
+      <h2>عرض خاص لفترة محدودة!</h2>
+      <p>احصل على خصم 60% عند الشراء خلال:</p>
+      <div class="countdown" id="countdown">00:00:00:00</div>
     </section>
 
     <!-- قسم التواصل -->
     <section class="contact-section" id="contact">
-      <div class="fade-up">
-        <h2 class="section-title" style="color: #fff;">تواصل معنا</h2>
-        <p>نحن جاهزون للإجابة على جميع استفساراتك</p>
-        <div class="social-links" style="margin-top: 1rem;">
-          <a href="https://wa.me/966535964292" class="social-link" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://t.me/wow1505" class="social-link" target="_blank">
-            <i class="fab fa-telegram"></i>
-          </a>
-        </div>
+      <h2 class="section-title" style="color: #fff;">تواصل معنا</h2>
+      <p>نحن جاهزون للإجابة على جميع استفساراتك</p>
+      <div class="social-links" style="margin-top: 1rem;">
+        <a href="https://wa.me/966535964292" class="social-link" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/wow1505" class="social-link" target="_blank">
+          <i class="fab fa-telegram"></i>
+        </a>
       </div>
     </section>
   </main>
 
   <!-- التذييل -->
-  <footer class="footer fade-up" style="transition-delay: 0.5s;">
+  <footer class="footer">
     <p>&copy; جميع الحقوق محفوظة للطالب فهد عبد الله القحطاني</p>
   </footer>
 
-  <!-- جافاسكريبت للحركات والعد التنازلي -->
+  <!-- جافاسكريبت العد التنازلي للعرض الخاص -->
   <script>
-    // مراقبة الظهور التدريجي للعناصر
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
-      observer.observe(el);
-    });
-
-    // تمرير سلس للروابط الداخلية
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // كود العد التنازلي للعرض الخاص
     function countdownTimer() {
-      // تعيين التاريخ المستهدف (مثلاً 7 أيام من الآن)
       const targetDate = new Date();
       targetDate.setDate(targetDate.getDate() + 7);
       const countdownElement = document.getElementById('countdown');
-
       function updateCountdown() {
         const now = new Date().getTime();
         const distance = targetDate.getTime() - now;
@@ -601,7 +682,6 @@
           clearInterval(interval);
           return;
         }
-        // حساب الأيام والساعات والدقائق والثواني
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
