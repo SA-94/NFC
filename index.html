@@ -3,41 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>الميدالية الذكية NFC</title>
-  <!-- خط تاجوال + أيقونات -->
+  <title>الميدالية الذكية NFC - الحل الذكي للتعريف الرقمي</title>
+  <!-- خطوط وأيقونات -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --primary-color: #2563eb;   /* أزرق أساسي */
-      --secondary-color: #1e40af; /* أزرق داكن */
-      --accent-color: #60a5fa;    /* أزرق فاتح */
-      --text-color: #1f2937;      /* رمادي غامق */
-      --light-bg: #f3f4f6;        /* خلفية فاتحة */
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #60a5fa;
+      --text-color: #1f2937;
+      --light-bg: #f3f4f6;
       --transition: all 0.3s ease;
       --base-font: 16px;
     }
-
-    /* الأساسيات */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Tajawal', sans-serif;
     }
-    html {
-      font-size: var(--base-font);
-    }
+    html { font-size: var(--base-font); }
     body {
       background: var(--light-bg);
       color: var(--text-color);
       line-height: 1.7;
     }
-
-    /* شريط علوي للرقم */
+    /* شريط علوي لرقم الواتساب */
     .top-bar {
       background-color: var(--secondary-color);
       padding: 0.4rem 1rem;
@@ -54,7 +46,6 @@
       color: #fff;
       text-decoration: underline;
     }
-
     /* الهيدر */
     .header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -62,11 +53,11 @@
       position: sticky;
       top: 0;
       z-index: 999;
+      padding: 0.5rem 1rem;
     }
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0.5rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -86,8 +77,8 @@
       color: rgba(255,255,255,0.9);
       text-decoration: none;
       font-weight: 500;
-      position: relative;
       font-size: 1rem;
+      position: relative;
       transition: var(--transition);
     }
     .nav-link::after {
@@ -97,17 +88,12 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: white;
+      background: #fff;
       transition: var(--transition);
     }
-    .nav-link:hover {
-      color: white;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    /* الأقسام */
+    .nav-link:hover { color: #fff; }
+    .nav-link:hover::after { width: 100%; }
+    /* الأقسام العامة */
     .section {
       padding: 3rem 1rem;
       max-width: 1200px;
@@ -130,8 +116,7 @@
       height: 3px;
       background: var(--accent-color);
     }
-
-    /* المميزات */
+    /* قسم المميزات */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -160,8 +145,7 @@
       margin-bottom: 0.5rem;
       color: var(--secondary-color);
     }
-
-    /* الفوائد */
+    /* قسم الفوائد */
     .benefits-section {
       background: #f8fafc;
       padding: 2.5rem 1rem;
@@ -186,23 +170,19 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .icon-highlight {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-    }
-
+    .icon-highlight { font-size: 1.5rem; color: var(--primary-color); }
     /* خطوات الاستخدام (بسيطة) */
     .step-list {
       counter-reset: step-counter;
-      padding: 0;
-      margin: 0.5rem 0;
       list-style: none;
+      margin-top: 0.5rem;
     }
     .step-item {
       counter-increment: step-counter;
       margin-bottom: 1rem;
       position: relative;
       padding-left: 1.8rem;
+      font-size: 0.95rem;
     }
     .step-item::before {
       content: counter(step-counter) ". ";
@@ -211,7 +191,6 @@
       font-weight: bold;
       color: var(--primary-color);
     }
-
     .tips-box {
       background: #dbeafe;
       padding: 1rem;
@@ -220,7 +199,118 @@
       margin-top: 1.5rem;
       font-size: 0.9rem;
     }
-
+    /* قسم الأسعار */
+    .pricing-section {
+      background: #fff;
+      padding: 2.5rem 1rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .price-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .price-image img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+    .price-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+    }
+    .price-info p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    /* قسم الفيديو */
+    .video-section {
+      background: #fff;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    /* قسم التقييمات (الشهادات) */
+    .testimonials-section {
+      background: #f8fafc;
+      padding: 2.5rem 1rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .testimonial-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .testimonial-card p {
+      margin-bottom: 0.75rem;
+    }
+    .testimonial-card .author {
+      font-weight: bold;
+      color: var(--secondary-color);
+    }
+    /* قسم الأسئلة الشائعة (FAQ) */
+    .faq-section {
+      background: #fff;
+      padding: 2.5rem 1rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    .faq-item summary {
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: #374151;
+    }
+    /* قسم العرض الخاص (العد التنازلي) */
+    .offer-section {
+      background: var(--accent-color);
+      color: #fff;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+    .offer-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
     /* قسم التواصل */
     .contact-section {
       background: var(--secondary-color);
@@ -231,7 +321,6 @@
       color: #fff;
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      position: relative;
     }
     .contact-section p {
       color: rgba(255,255,255,0.9);
@@ -244,14 +333,11 @@
       gap: 1.5rem;
     }
     .social-link {
-      color: white;
+      color: #fff;
       font-size: 1.8rem;
       transition: var(--transition);
     }
-    .social-link:hover {
-      transform: scale(1.1);
-    }
-
+    .social-link:hover { transform: scale(1.1); }
     /* الحقوق */
     .footer {
       background: #e5e7eb;
@@ -260,8 +346,7 @@
       font-size: 0.9rem;
       color: #374151;
     }
-
-    /* حركات بسيطة */
+    /* الحركات (Animations) */
     .fade-up, .fade-left, .fade-right {
       opacity: 0;
       transition: var(--transition);
@@ -270,25 +355,23 @@
     .fade-left { transform: translateX(-30px); }
     .fade-right { transform: translateX(30px); }
     .show { opacity: 1; transform: none; }
-
     /* استجابة للجوال */
     @media (max-width: 768px) {
-      .section-title {
-        font-size: 1.5rem;
-      }
-      .feature-card i {
-        font-size: 1.6rem;
-      }
-      .feature-title {
-        font-size: 1.1rem;
-      }
-      .contact-section h2 {
-        font-size: 1.6rem;
-      }
+      .section-title { font-size: 1.5rem; }
+      .feature-card i { font-size: 1.6rem; }
+      .feature-title { font-size: 1.1rem; }
+      .contact-section h2 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
+  <!-- شريط الواتساب العلوي -->
+  <div class="top-bar">
+    <div class="container">
+      <p>واتساب: <a href="https://wa.me/966535964292" target="_blank">+966535964292</a></p>
+    </div>
+  </div>
+
   <!-- الهيدر -->
   <header class="header">
     <nav class="nav-container">
@@ -296,6 +379,11 @@
       <ul class="nav-links fade-right">
         <li><a href="#features" class="nav-link">المميزات</a></li>
         <li><a href="#benefits" class="nav-link">الفوائد</a></li>
+        <li><a href="#pricing" class="nav-link">الأسعار</a></li>
+        <li><a href="#video" class="nav-link">الفيديو</a></li>
+        <li><a href="#testimonials" class="nav-link">التقييمات</a></li>
+        <li><a href="#faq" class="nav-link">الأسئلة</a></li>
+        <li><a href="#offer" class="nav-link">العرض</a></li>
         <li><a href="#contact" class="nav-link">التواصل</a></li>
       </ul>
     </nav>
@@ -315,12 +403,12 @@
         <div class="feature-card fade-up" style="transition-delay: 0.2s;">
           <i class="fas fa-shield-alt"></i>
           <h3 class="feature-title">أمان متطور</h3>
-          <p>تشفير عالي يحمي بياناتك الشخصية من أي وصول غير مصرح</p>
+          <p>تشفير عالي يحمي بياناتك الشخصية من الوصول غير المصرح</p>
         </div>
         <div class="feature-card fade-right" style="transition-delay: 0.3s;">
           <i class="fas fa-cogs"></i>
           <h3 class="feature-title">تخصيص كامل</h3>
-          <p>حوّلها لبطاقة تعريف وظيفية أو صحية أو للتحكم بالأجهزة</p>
+          <p>حوّل الميدالية إلى بطاقة تعريف وظيفية أو صحية أو للتحكم بالأجهزة</p>
         </div>
       </div>
     </section>
@@ -349,7 +437,6 @@
             </ul>
           </div>
         </div>
-
         <div class="tips-box fade-up" style="transition-delay: 0.4s;">
           <h4 style="display: flex; align-items: center; font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem;">
             <i class="fas fa-lightbulb icon-highlight"></i>
@@ -373,8 +460,88 @@
       </div>
     </section>
 
+    <!-- قسم الأسعار -->
+    <section class="pricing-section" id="pricing">
+      <h2 class="section-title fade-up">الأسعار والعروض</h2>
+      <div class="pricing-grid">
+        <div class="price-card fade-left" style="transition-delay: 0.2s;">
+          <div class="price-image">
+            <img src="nfc-piece.jpg" alt="الميدالية الذكية" />
+          </div>
+          <div class="price-info">
+            <h3>الميدالية الذكية</h3>
+            <p>السعر: <strong>100 ريال</strong></p>
+          </div>
+        </div>
+        <div class="price-card fade-right" style="transition-delay: 0.3s;">
+          <div class="price-image">
+            <img src="custom-website.jpg" alt="برمجة موقع مخصص" />
+          </div>
+          <div class="price-info">
+            <h3>برمجة موقع مخصص</h3>
+            <p>السعر: <strong>500 ريال</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الفيديو التوضيحي -->
+    <section class="video-section" id="video">
+      <h2 class="section-title fade-up">شاهد الفيديو التوضيحي</h2>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen class="fade-up" style="transition-delay: 0.2s;"></iframe>
+    </section>
+
+    <!-- قسم تقييمات العملاء -->
+    <section class="testimonials-section" id="testimonials">
+      <h2 class="section-title fade-up">آراء العملاء</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-left" style="transition-delay: 0.2s;">
+          <p>"الميدالية غيرت طريقتي في مشاركة معلوماتي. خدمة ممتازة!"</p>
+          <p class="author">سارة</p>
+        </div>
+        <div class="testimonial-card fade-up" style="transition-delay: 0.3s;">
+          <p>"الأمان والتحديث الفوري رائعين. أنصح الجميع باستخدامها."</p>
+          <p class="author">محمد</p>
+        </div>
+        <div class="testimonial-card fade-right" style="transition-delay: 0.4s;">
+          <p>"خدمة برمجة الموقع حسب الطلب كانت احترافية وأسعار معقولة."</p>
+          <p class="author">ليلى</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section" id="faq">
+      <h2 class="section-title fade-up">الأسئلة الشائعة</h2>
+      <div class="faq-item fade-up" style="transition-delay: 0.2s;">
+        <details>
+          <summary>ما هي تقنية NFC؟</summary>
+          <p>NFC (الاتصال قريب المدى) هي تقنية تتيح تبادل البيانات بين الأجهزة بمجرد تقريبها من بعضها.</p>
+        </details>
+      </div>
+      <div class="faq-item fade-up" style="transition-delay: 0.3s;">
+        <details>
+          <summary>كيف يمكنني تحديث بيانات الميدالية؟</summary>
+          <p>يمكنك تحديث بيانات الميدالية عن بعد عبر التطبيق أو من خلال الموقع المخصص لذلك.</p>
+        </details>
+      </div>
+      <div class="faq-item fade-up" style="transition-delay: 0.4s;">
+        <details>
+          <summary>هل الميدالية مقاومة للماء؟</summary>
+          <p>نعم، الميدالية بتصميم مقاوم للماء والغبار بمعيار IP68.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- قسم العرض الخاص مع العد التنازلي -->
+    <section class="offer-section" id="offer">
+      <h2 class="fade-up">عرض خاص لفترة محدودة!</h2>
+      <p class="fade-up" style="transition-delay: 0.2s;">احصل على خصم 20% عند الشراء خلال:</p>
+      <div class="countdown fade-up" style="transition-delay: 0.3s;" id="countdown">00:00:00:00</div>
+    </section>
+
     <!-- قسم التواصل -->
-    <section class="section contact-section" id="contact">
+    <section class="contact-section" id="contact">
       <div class="fade-up">
         <h2 class="section-title" style="color: #fff;">تواصل معنا</h2>
         <p>نحن جاهزون للإجابة على جميع استفساراتك</p>
@@ -390,28 +557,27 @@
     </section>
   </main>
 
-  <!-- الحقوق -->
+  <!-- التذييل -->
   <footer class="footer fade-up" style="transition-delay: 0.5s;">
     <p>&copy; جميع الحقوق محفوظة للطالب فهد عبد الله القحطاني</p>
   </footer>
 
+  <!-- جافاسكريبت للحركات والعد التنازلي -->
   <script>
-    // مراقبة الظهور التدريجي
+    // مراقبة الظهور التدريجي للعناصر
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         }
       });
     }, { threshold: 0.1 });
-
-    // تطبيق المراقبة على عناصر الحركات
-    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach((el) => {
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
       observer.observe(el);
     });
 
-    // تمرير سلس عند الضغط على الروابط
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    // تمرير سلس للروابط الداخلية
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -419,6 +585,33 @@
         });
       });
     });
+
+    // كود العد التنازلي للعرض الخاص
+    function countdownTimer() {
+      // تعيين التاريخ المستهدف (مثلاً 7 أيام من الآن)
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 7);
+      const countdownElement = document.getElementById('countdown');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate.getTime() - now;
+        if (distance < 0) {
+          countdownElement.innerHTML = "انتهى العرض";
+          clearInterval(interval);
+          return;
+        }
+        // حساب الأيام والساعات والدقائق والثواني
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdownElement.innerHTML = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
+    }
+    countdownTimer();
   </script>
 </body>
 </html>
